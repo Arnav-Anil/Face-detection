@@ -1,65 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-
-    <style>
-      @font-face {
-        font-family: "Digital";
-        src: url("digital-7.ttf");
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .wrapper {
-        width: 100px;
-        text-align: center;
-        position: absolute;
-        top: 0;
-      }
-
-      #timer {
-        font-family: "Digital";
-        color: #3e3e3e;
-        font-size: 50px;
-      }
-
-      canvas {
-        position: absolute;
-      }
-    </style>
-  </head>
-  <body>
-    <video id="video" width="720" height="560" autoplay muted></video>
-    <div class="wrapper"><h1 id="timer">0</h1></div>
-
-    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
-
-    <script>
-      var firebaseConfig = {
-        apiKey: "AIzaSyBAGDYjmm2zvbRc6Fxta62KfB1n6WPM7J8",
-        authDomain: "expensify-cbbd8.firebaseapp.com",
-        databaseURL: "https://expensify-cbbd8.firebaseio.com",
-        projectId: "expensify-cbbd8",
-        storageBucket: "expensify-cbbd8.appspot.com",
-        messagingSenderId: "12060208395",
-        appId: "1:12060208395:web:c2fc2a9f500f946146460e"
-      };
-      firebase.initializeApp(firebaseConfig);
-    </script>
-    <script src="face-api.min.js"></script>
-    <script src="script.js"></script>
-  </body>
-</html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name = "viewport" content="width=device-width, initial scale= 1.0"/>
+        <meta http-equiv="X-UA-compatible" content="ie=edge" />
+      
+        <link rel="stylesheet" href = "./style.css">
+        
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h3 class="Logo">Vision</h3>
+                 <img class="hamburger" src="./img/Eye1.svg" alt="hamburger">
+            </nav>
+            <section>
+                <div class="hero"> 
+                    <img src = "./img/propic3.jpg" alt="">
+                    <h1 class="headline">With You,<br>Always</h1>
+                </div>
+            </section>
+            <a href="app.html" class="btn">Click here to check it out!</a>
+        </header>
+        <div class="slider"></div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+        <script src="App.js"></script>
+       
+    </body>
+</html> 
