@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ul {
+      height: 500px;
+      width: 500px;
+      background: #eee;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      overflow-y: scroll;
+    }
+    li {
+      list-style: none;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #fff;
+      padding: 10px;
+      max-width: 40%;
+      border-radius: 10px;
+      margin: 10px 0;
+      color: #3e3e3e;
+    }
+  </style>
+
+  <body>
+    <ul id="wrapper"></ul>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyBAGDYjmm2zvbRc6Fxta62KfB1n6WPM7J8",
+      authDomain: "expensify-cbbd8.firebaseapp.com",
+      databaseURL: "https://expensify-cbbd8.firebaseio.com",
+      projectId: "expensify-cbbd8",
+      storageBucket: "expensify-cbbd8.appspot.com",
+      messagingSenderId: "12060208395",
+      appId: "1:12060208395:web:c2fc2a9f500f946146460e"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script>
+    const wrapper = document.getElementById("wrapper");
+    const db = firebase.database();
+    db.ref("message").on("child_added", snap => {
+      const list = document.createElement("li");
+      const textnode = document.createTextNode(snap.val().message);
+      list.appendChild(textnode);
+      list.className = "msg";
+      wrapper.appendChild(list);
+    });
+  </script>
+</html>
